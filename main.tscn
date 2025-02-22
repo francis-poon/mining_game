@@ -1,110 +1,150 @@
-[gd_scene format=3 uid="uid://cvbpmsdmb7q7o"]
+[gd_scene load_steps=3 format=3 uid="uid://cvbpmsdmb7q7o"]
+
+[ext_resource type="Script" path="res://auto_scale_camera.gd" id="1_l3qut"]
+[ext_resource type="Script" path="res://mining_surface.gd" id="1_thsxt"]
 
 [node name="Main" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer" node_paths=PackedStringArray("camera")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+stretch = true
+script = ExtResource("1_thsxt")
+camera = NodePath("SubViewport/Camera2D")
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer"]
+size = Vector2i(861, 483)
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" node_paths=PackedStringArray("target")]
+script = ExtResource("1_l3qut")
+target = NodePath("../GridContainer")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport"]
 offset_right = 40.0
 offset_bottom = 40.0
 columns = 5
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect4" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect4" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect5" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect5" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect6" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect6" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect7" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect7" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect8" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect8" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect9" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect9" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect10" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect10" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect11" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect11" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect12" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect12" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect13" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect13" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect14" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect14" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect15" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect15" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect16" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect16" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect17" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect17" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect18" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect18" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect19" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect19" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect20" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect20" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect21" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect21" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect22" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect22" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect23" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect23" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect24" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect24" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="ColorRect25" type="ColorRect" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ColorRect25" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/GridContainer"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="resized" from="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer" to="CanvasLayer/VBoxContainer/HBoxContainer/SubViewportContainer" method="_on_resized"]
