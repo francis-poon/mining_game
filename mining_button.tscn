@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://bo58lr60aroch"]
+
+[ext_resource type="Script" path="res://mining_button.gd" id="1_yjqcd"]
+[ext_resource type="Texture2D" uid="uid://wv7giu7tpo2k" path="res://assets/Hana Caraka Cozy Island - Free/tileset - simplified.png" id="2_xo8i5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t6uo"]
+atlas = ExtResource("2_xo8i5")
+region = Rect2(160, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_seygv"]
+atlas = ExtResource("2_xo8i5")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aum75"]
+atlas = ExtResource("2_xo8i5")
+region = Rect2(128, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2jft"]
+atlas = ExtResource("2_xo8i5")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1pox"]
+atlas = ExtResource("2_xo8i5")
+region = Rect2(16, 16, 16, 16)
+
+[node name="MiningButton" type="TextureButton"]
+custom_minimum_size = Vector2(160, 160)
+offset_right = 40.0
+offset_bottom = 40.0
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("1_yjqcd")
+mining_textures = Array[Texture2D]([SubResource("AtlasTexture_8t6uo"), SubResource("AtlasTexture_seygv"), SubResource("AtlasTexture_aum75"), SubResource("AtlasTexture_f2jft"), SubResource("AtlasTexture_v1pox")])
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

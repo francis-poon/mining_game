@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=3 uid="uid://cvbpmsdmb7q7o"]
+
+[ext_resource type="Script" path="res://mining_minigame.gd" id="1_hd278"]
+[ext_resource type="Script" path="res://mining_durability.gd" id="1_ndmj1"]
+[ext_resource type="PackedScene" uid="uid://2dgp28b8iovt" path="res://mining_surface.tscn" id="2_4ka27"]
+[ext_resource type="Script" path="res://mining_shape_button.gd" id="3_oo6ew"]
+[ext_resource type="Script" path="res://mining_tool_selector.gd" id="4_4td7i"]
+[ext_resource type="ButtonGroup" uid="uid://bn1wilk07yl5k" path="res://resources/tool_button_group.tres" id="5_8187t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okmnj"]
+bg_color = Color(0.737542, 0.550335, 0.4877, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0o1gg"]
+bg_color = Color(0.496207, 0.242474, 0.236464, 1)
+
+[node name="MiningMinigame" type="Control" node_paths=PackedStringArray("mining_durability_bar", "mining_surface", "mining_tool_selector")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hd278")
+mining_durability_bar = NodePath("VBoxContainer/ColorRect/MiningDurability")
+mining_surface = NodePath("VBoxContainer/HBoxContainer/MiningSurface")
+mining_tool_selector = NodePath("VBoxContainer/HBoxContainer/ColorRect2/MiningToolSelector")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MiningDurability" type="ProgressBar" parent="VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_okmnj")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0o1gg")
+value = 30.0
+fill_mode = 1
+show_percentage = false
+script = ExtResource("1_ndmj1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="MiningSurface" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_4ka27")]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MiningToolSelector" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/ColorRect2" node_paths=PackedStringArray("default_mining_tool")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -250.0
+offset_right = 60.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("4_4td7i")
+default_mining_tool = NodePath("HammarSelect")
+
+[node name="HammarSelect" type="Button" parent="VBoxContainer/HBoxContainer/ColorRect2/MiningToolSelector"]
+custom_minimum_size = Vector2(120, 80)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("5_8187t")
+text = "Hammar"
+script = ExtResource("3_oo6ew")
+mining_shape = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 0), Vector2i(1, 0), Vector2i(1, 0), Vector2i(-1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, 1), Vector2i(0, -1), Vector2i(0, -1), Vector2i(1, 1), Vector2i(1, -1), Vector2i(-1, 1), Vector2i(-1, -1)])
+
+[node name="PickSelect" type="Button" parent="VBoxContainer/HBoxContainer/ColorRect2/MiningToolSelector"]
+custom_minimum_size = Vector2(120, 80)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("5_8187t")
+text = "Pick"
+script = ExtResource("3_oo6ew")
+mining_shape = Array[Vector2i]([Vector2i(0, 0), Vector2i(0, 0), Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)])
+
+[connection signal="durability_broken" from="VBoxContainer/ColorRect/MiningDurability" to="." method="end_game"]
+[connection signal="durability_broken" from="VBoxContainer/ColorRect/MiningDurability" to="VBoxContainer/HBoxContainer/MiningSurface" method="end_game"]
+[connection signal="mine" from="VBoxContainer/HBoxContainer/MiningSurface" to="VBoxContainer/ColorRect/MiningDurability" method="_on_mine"]
+[connection signal="select_mining_shape" from="VBoxContainer/HBoxContainer/ColorRect2/MiningToolSelector" to="VBoxContainer/HBoxContainer/MiningSurface" method="_on_select_mining_shape"]
