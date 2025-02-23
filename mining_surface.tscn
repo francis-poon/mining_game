@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://2dgp28b8iovt"]
+
+[ext_resource type="Script" path="res://mining_surface.gd" id="1_6mp2c"]
+[ext_resource type="Script" path="res://auto_scale_camera.gd" id="2_3k3h2"]
+[ext_resource type="Script" path="res://mining_grid.gd" id="3_jtnel"]
+[ext_resource type="PackedScene" uid="uid://bo58lr60aroch" path="res://mining_button.tscn" id="4_ao2su"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" node_paths=PackedStringArray("camera")]
+texture_filter = 1
+offset_right = 1600.0
+offset_bottom = 900.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+stretch = true
+script = ExtResource("1_6mp2c")
+camera = NodePath("SubViewport/Camera2D")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+size = Vector2i(1600, 900)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="SubViewport" node_paths=PackedStringArray("target")]
+script = ExtResource("2_3k3h2")
+target = NodePath("../GridContainer")
+
+[node name="GridContainer" type="GridContainer" parent="SubViewport"]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 5
+script = ExtResource("3_jtnel")
+grid_size = Vector2(5, 6)
+mining_button = ExtResource("4_ao2su")
+
+[connection signal="resized" from="." to="." method="_on_resized"]

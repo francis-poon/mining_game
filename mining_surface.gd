@@ -5,4 +5,3 @@ extends SubViewportContainer
 func _draw():
 	await get_tree().process_frame
 	camera.scale_camera()
-	print(size)
