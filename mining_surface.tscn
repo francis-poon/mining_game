@@ -150,7 +150,7 @@ texture = ExtResource("3_iwsdm")
 [sub_resource type="TileSet" id="TileSet_ls6lc"]
 sources/0 = SubResource("TileSetAtlasSource_dywjk")
 
-[node name="SubViewportContainer" type="SubViewportContainer" node_paths=PackedStringArray("_camera", "_mining_tile_map", "_treasure_tile_map")]
+[node name="MiningSurface" type="SubViewportContainer" node_paths=PackedStringArray("_camera", "_mining_tile_map", "_treasure_tile_map")]
 texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -188,4 +188,4 @@ map_target_rect = Rect2i(0, 0, 8, 6)
 texture_filter = 1
 script = ExtResource("2_3k3h2")
 
-[connection signal="resized" from="." to="." method="_on_resized"]
+[connection signal="mine" from="SubViewport/MiningTileMap" to="." method="_on_mine"]

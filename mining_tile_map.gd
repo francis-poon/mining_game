@@ -2,18 +2,20 @@ class_name MiningTileMap
 extends TileMapLayer
 
 signal map_ready(global_target_rect: Rect2)
+signal mine(amount: float)
 
 @export var mining_stage_tiles: Array[Vector2i] = [Vector2i(0, 0)]
 @export var map_target_rect: Rect2i = Rect2i(Vector2i(0, 0), Vector2i(1, 1))
 
 var mining_stage: Array[Array]
-var MINING_SHAPE: Array[Vector2i] = [
-	Vector2i(0, 0),
-	Vector2i(1, 0),
-	Vector2i(-1, 0),
-	Vector2i(0, 1),
-	Vector2i(0, -1)
-]
+var mining_shape: Array[Vector2i] = [Vector2i.ZERO]
+#var MINING_SHAPE: Array[Vector2i] = [
+	#Vector2i(0, 0),
+	#Vector2i(1, 0),
+	#Vector2i(-1, 0),
+	#Vector2i(0, 1),
+	#Vector2i(0, -1)
+#]
 
 func _ready() -> void:
 	mining_stage = []
@@ -43,7 +45,7 @@ func _mine(map_pos: Vector2i):
 	
 	var tile_set_coord: Vector2i
 	var mining_pos: Vector2i
-	for shape_offset in MINING_SHAPE:
+	for shape_offset in mining_shape:
 		mining_pos = map_pos + shape_offset
 		if _is_mineable(mining_pos):
 			mining_stage[mining_pos.x][mining_pos.y] += 1
@@ -52,6 +54,10 @@ func _mine(map_pos: Vector2i):
 			else:
 				tile_set_coord = mining_stage_tiles[mining_stage[mining_pos.x][mining_pos.y]]
 				set_cell(mining_pos, tile_set.get_source_id(0), tile_set_coord)
+	mine.emit(mining_shape.size())
 
 func _is_mineable(map_pos: Vector2i) -> bool:
 	return map_target_rect.has_point(map_pos) and mining_stage[map_pos.x][map_pos.y] < mining_stage_tiles.size()
+
+func set_mining_shape(shape: Array[Vector2i]):
+	mining_shape = shape
