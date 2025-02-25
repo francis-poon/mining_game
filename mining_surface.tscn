@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://2dgp28b8iovt"]
+[gd_scene load_steps=8 format=3 uid="uid://2dgp28b8iovt"]
 
 [ext_resource type="Script" path="res://mining_surface.gd" id="1_6mp2c"]
+[ext_resource type="Script" path="res://treasure_layer.gd" id="2_2hgpp"]
 [ext_resource type="Script" path="res://target_scale_camera.gd" id="2_3k3h2"]
 [ext_resource type="Texture2D" uid="uid://wv7giu7tpo2k" path="res://assets/Hana Caraka Cozy Island - Free/tileset - simplified.png" id="3_iwsdm"]
 [ext_resource type="Script" path="res://mining_tile_map.gd" id="5_ojwpm"]
@@ -91,14 +92,17 @@ size_flags_stretch_ratio = 3.0
 stretch = true
 script = ExtResource("1_6mp2c")
 camera = NodePath("SubViewport/Camera2D")
-mining_tile_map = NodePath("SubViewport/TileMapLayer")
+mining_tile_map = NodePath("SubViewport/MiningTileMap")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 handle_input_locally = false
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="TileMapLayer" type="TileMapLayer" parent="SubViewport"]
+[node name="TreasureTileMap" type="TileMapLayer" parent="SubViewport"]
+script = ExtResource("2_2hgpp")
+
+[node name="MiningTileMap" type="TileMapLayer" parent="SubViewport"]
 texture_filter = 1
 tile_set = SubResource("TileSet_ls6lc")
 script = ExtResource("5_ojwpm")

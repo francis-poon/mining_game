@@ -3,7 +3,7 @@ extends Camera2D
 
 var target: Rect2:
 	set(value):
-		print("Setting camera target")
+		Logger.trace("Setting camera target")
 		target = value
 		_scale_camera()
 
