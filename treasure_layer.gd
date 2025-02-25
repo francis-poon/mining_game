@@ -12,7 +12,7 @@ func spawn_treasures(treasure_count: int):
 
 func _attempt_spawn() -> bool:
 	for i in range(MAX_SPAWN_ATTEMPTS):
-		var spawn_point = Vector2i(randi_range(0, map_target_rect.size.x), randi_range(0, map_target_rect.size.y))
+		var spawn_point = Vector2i(randi_range(0, map_target_rect.size.x - 1), randi_range(0, map_target_rect.size.y - 1))
 		if get_cell_tile_data(spawn_point):
 			continue
 		set_cell(spawn_point, tile_set.get_source_id(0), treasure_tile)

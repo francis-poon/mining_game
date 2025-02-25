@@ -47,8 +47,11 @@ func _mine(map_pos: Vector2i):
 		mining_pos = map_pos + shape_offset
 		if _is_mineable(mining_pos):
 			mining_stage[mining_pos.x][mining_pos.y] += 1
-			tile_set_coord = mining_stage_tiles[mining_stage[mining_pos.x][mining_pos.y]]
-			set_cell(mining_pos, tile_set.get_source_id(0), tile_set_coord)
+			if mining_stage[mining_pos.x][mining_pos.y] >= mining_stage_tiles.size():
+				erase_cell(mining_pos)
+			else:
+				tile_set_coord = mining_stage_tiles[mining_stage[mining_pos.x][mining_pos.y]]
+				set_cell(mining_pos, tile_set.get_source_id(0), tile_set_coord)
 
 func _is_mineable(map_pos: Vector2i) -> bool:
-	return map_target_rect.has_point(map_pos) and mining_stage[map_pos.x][map_pos.y] + 1 < mining_stage_tiles.size()
+	return map_target_rect.has_point(map_pos) and mining_stage[map_pos.x][map_pos.y] < mining_stage_tiles.size()
