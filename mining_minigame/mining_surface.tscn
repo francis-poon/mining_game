@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://2dgp28b8iovt"]
 
-[ext_resource type="Script" path="res://mining_surface.gd" id="1_6mp2c"]
-[ext_resource type="Script" path="res://treasure_layer.gd" id="2_2hgpp"]
-[ext_resource type="Script" path="res://target_scale_camera.gd" id="2_3k3h2"]
+[ext_resource type="Script" path="res://mining_minigame/mining_surface.gd" id="1_6mp2c"]
+[ext_resource type="Script" path="res://mining_minigame/treasure_layer.gd" id="2_2hgpp"]
+[ext_resource type="Script" path="res://utils/target_scale_camera.gd" id="2_3k3h2"]
 [ext_resource type="Texture2D" uid="uid://dr5kpo7sip43i" path="res://assets/Hana Caraka Cozy Island - Free/props.png" id="2_4vqrk"]
 [ext_resource type="Texture2D" uid="uid://wv7giu7tpo2k" path="res://assets/Hana Caraka Cozy Island - Free/tileset - simplified.png" id="3_iwsdm"]
-[ext_resource type="Script" path="res://mining_tile_map.gd" id="5_ojwpm"]
+[ext_resource type="Script" path="res://mining_minigame/mining_tile_map.gd" id="5_ojwpm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mi0i4"]
 texture = ExtResource("2_4vqrk")

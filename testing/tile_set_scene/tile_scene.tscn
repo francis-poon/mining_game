@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnx37hutssymw"]
+
+[ext_resource type="Texture2D" uid="uid://dr5kpo7sip43i" path="res://assets/Hana Caraka Cozy Island - Free/props.png" id="1_qjcpd"]
+[ext_resource type="Script" path="res://testing/tile_set_scene/tile_scene.gd" id="2_mjyvi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whysh"]
+atlas = ExtResource("1_qjcpd")
+region = Rect2(96, 32, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2yo7"]
+
+[node name="TileScene" type="Sprite2D"]
+texture = SubResource("AtlasTexture_whysh")
+script = ExtResource("2_mjyvi")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_x2yo7")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

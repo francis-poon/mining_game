@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://burrwl5mjocls"]
+
+[ext_resource type="Texture2D" uid="uid://dcjx554022867" path="res://assets/[Norma2D] CelestialObjects/CelestialObjects.png" id="1_rcjw0"]
+[ext_resource type="Script" path="res://resources/tile_sets/mining_tile.gd" id="2_jbqom"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jibbx"]
+atlas = ExtResource("1_rcjw0")
+region = Rect2(223, 239, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejnm8"]
+size = Vector2(16, 16)
+
+[node name="MiningTile" type="Sprite2D"]
+texture = SubResource("AtlasTexture_jibbx")
+script = ExtResource("2_jbqom")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ejnm8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

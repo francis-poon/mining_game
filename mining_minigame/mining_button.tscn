@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bo58lr60aroch"]
 
-[ext_resource type="Script" path="res://mining_button.gd" id="1_yjqcd"]
+[ext_resource type="Script" path="res://mining_minigame/mining_button.gd" id="1_yjqcd"]
 [ext_resource type="Texture2D" uid="uid://wv7giu7tpo2k" path="res://assets/Hana Caraka Cozy Island - Free/tileset - simplified.png" id="2_xo8i5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8t6uo"]

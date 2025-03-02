@@ -10,13 +10,13 @@ signal mine(amount: float)
 @export var _treasure_tile_map: TreasureTileMap
 
 var treasure_spawn_count: int  = 5
-
+const TREASURE_ITEM_ID = 0
 
 func new_game():
 	_mining_tile_map.new_game(map_target_rect)
 	_treasure_tile_map.new_game(map_target_rect, treasure_spawn_count)
 
-func end_game():
+func end_game() -> InventoryData:
 	_mining_tile_map.end_game()
 	
 	var treasure_count: int = 0
@@ -24,6 +24,7 @@ func end_game():
 		if not _mining_tile_map.get_cell_tile_data(treasure_pos):
 			treasure_count += 1
 	Logger.debug("Treasures mined: {0}".format([treasure_count]))
+	return InventoryData.new({TREASURE_ITEM_ID: treasure_count})
 
 func _ready() -> void:
 	_mining_tile_map.map_ready.connect(_on_map_ready)

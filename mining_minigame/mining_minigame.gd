@@ -1,7 +1,7 @@
 class_name MiningMinigame
 extends Control
 
-signal game_over
+signal game_over(item_drops: InventoryData)
 
 @export var mining_durability_bar: ProgressBar
 @export var mining_surface: MiningSurface
@@ -16,4 +16,5 @@ func new_game():
 	mining_tool_selector.new_game()
 
 func end_game():
-	game_over.emit()
+	var item_drops: InventoryData = mining_surface.end_game()
+	game_over.emit(item_drops)
