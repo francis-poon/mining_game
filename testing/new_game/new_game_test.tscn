@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://eyl2l7q3avwv"]
 
-[ext_resource type="PackedScene" uid="uid://cvbpmsdmb7q7o" path="res://mining_minigame.tscn" id="1_6h3xg"]
+[ext_resource type="PackedScene" uid="uid://cvbpmsdmb7q7o" path="res://mining_minigame/mining_minigame.tscn" id="1_6h3xg"]
 [ext_resource type="Script" path="res://testing/new_game/new_game_test.gd" id="1_a5p7d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_li3l2"]

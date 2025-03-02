@@ -10,4 +10,4 @@ enum LogLevel {
 }
 
 
-static var log_level = LogLevel.DEBUG
+static var log_level = LogLevel.TRACE
