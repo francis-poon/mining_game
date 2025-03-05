@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bnx37hutssymw"]
 
 [ext_resource type="Texture2D" uid="uid://dr5kpo7sip43i" path="res://assets/Hana Caraka Cozy Island - Free/props.png" id="1_qjcpd"]
-[ext_resource type="Script" path="res://testing/tile_set_scene/tile_scene.gd" id="2_mjyvi"]
+[ext_resource type="Script" uid="uid://cylkcu1yjs844" path="res://testing/tile_set_scene/tile_scene.gd" id="2_mjyvi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_whysh"]
 atlas = ExtResource("1_qjcpd")

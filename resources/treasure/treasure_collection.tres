@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="TreasureCollection" load_steps=10 format=3 uid="uid://b73wtuhvfar42"]
+
+[ext_resource type="Script" uid="uid://bsuk5854xpjcn" path="res://resources/treasure/treasure_collection.gd" id="1_v8e80"]
+[ext_resource type="Script" uid="uid://cc70aqgoy0h0y" path="res://resources/treasure/treasure.gd" id="2_jtvnp"]
+[ext_resource type="Script" uid="uid://cma2nsv3mpywn" path="res://resources/inventory_data.gd" id="2_s8kpt"]
+[ext_resource type="TileSet" uid="uid://du2id2ifa053t" path="res://resources/tile_sets/treasure_tile_set.tres" id="3_02gx1"]
+
+[sub_resource type="Resource" id="Resource_d3bxg"]
+script = ExtResource("2_s8kpt")
+item_count = {
+0: 2
+}
+
+[sub_resource type="Resource" id="Resource_ythwa"]
+script = ExtResource("2_jtvnp")
+item_drops = SubResource("Resource_d3bxg")
+pattern_id = 0
+
+[sub_resource type="Resource" id="Resource_jkbjm"]
+script = ExtResource("2_s8kpt")
+item_count = {
+0: 1
+}
+
+[sub_resource type="Resource" id="Resource_s0obg"]
+script = ExtResource("2_jtvnp")
+item_drops = SubResource("Resource_jkbjm")
+pattern_id = 1
+
+[sub_resource type="Resource" id="Resource_40xpt"]
+script = ExtResource("2_jtvnp")
+item_drops = SubResource("Resource_jkbjm")
+pattern_id = 2
+
+[resource]
+script = ExtResource("1_v8e80")
+tile_set = ExtResource("3_02gx1")
+small_treasures = Array[ExtResource("2_jtvnp")]([SubResource("Resource_s0obg"), SubResource("Resource_40xpt")])
+medium_treasures = Array[ExtResource("2_jtvnp")]([SubResource("Resource_ythwa")])

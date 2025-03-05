@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://csbfi0lwmegp"]
 
-[ext_resource type="Script" path="res://utils/items/item_manager.gd" id="1_r5cys"]
-[ext_resource type="Script" path="res://utils/items/item_data.gd" id="2_sw2d5"]
+[ext_resource type="Script" uid="uid://bq04h7r3sgfjd" path="res://utils/items/item_manager.gd" id="1_r5cys"]
+[ext_resource type="Script" uid="uid://bowl0ldhv0y0j" path="res://utils/items/item_data.gd" id="2_sw2d5"]
 
 [node name="ItemManager" type="Node2D"]
 script = ExtResource("1_r5cys")

@@ -1,15 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://3e0wqvueic52"]
 
-[ext_resource type="Script" path="res://player/player.gd" id="1_tpll3"]
+[ext_resource type="Script" uid="uid://bsiy4ovgopgvu" path="res://player/player.gd" id="1_tpll3"]
 [ext_resource type="Texture2D" uid="uid://dcfofwd2fmao6" path="res://assets/[9E0] Meow Knight/Meow-Knight_Idle.png" id="2_snkft"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uqj8k"]
 atlas = ExtResource("2_snkft")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_akems"]
-radius = 6.0
-height = 18.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1eshi"]
+size = Vector2(10, 15)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_tpll3")
@@ -18,5 +17,5 @@ script = ExtResource("1_tpll3")
 texture = SubResource("AtlasTexture_uqj8k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource("CapsuleShape2D_akems")
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_1eshi")
