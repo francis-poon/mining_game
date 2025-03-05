@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://cvbpmsdmb7q7o"]
 
-[ext_resource type="Script" path="res://mining_minigame/mining_minigame.gd" id="1_hd278"]
-[ext_resource type="Script" path="res://mining_minigame/mining_durability.gd" id="1_ndmj1"]
+[ext_resource type="Script" uid="uid://bc5iqsta0lcci" path="res://mining_minigame/mining_minigame.gd" id="1_hd278"]
+[ext_resource type="Script" uid="uid://bxa85jt7vhb3c" path="res://mining_minigame/mining_durability.gd" id="1_ndmj1"]
 [ext_resource type="PackedScene" uid="uid://2dgp28b8iovt" path="res://mining_minigame/mining_surface.tscn" id="2_4ka27"]
-[ext_resource type="Script" path="res://mining_minigame/mining_shape_button.gd" id="3_oo6ew"]
-[ext_resource type="Script" path="res://mining_minigame/mining_tool_selector.gd" id="4_4td7i"]
+[ext_resource type="Script" uid="uid://2jhrx0orn4lw" path="res://mining_minigame/mining_shape_button.gd" id="3_oo6ew"]
+[ext_resource type="Script" uid="uid://cqso56mybxjxi" path="res://mining_minigame/mining_tool_selector.gd" id="4_4td7i"]
 [ext_resource type="ButtonGroup" uid="uid://bn1wilk07yl5k" path="res://resources/tool_button_group.tres" id="5_8187t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okmnj"]

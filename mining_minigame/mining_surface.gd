@@ -6,41 +6,49 @@ signal mine(amount: float)
 @export var map_target_rect: Rect2i = Rect2i(Vector2i.ZERO, Vector2i(1, 1))
 
 @export var _camera: TargetScaleCamera
-@export var _mining_tile_map: MiningTileMap
+@export var _mining_surface_tile_map: MiningSurfaceTileMap
 @export var _treasure_tile_map: TreasureTileMap
+@export var _mining_background_tile_map: MiningBackgroundTileMap
 
-var treasure_spawn_count: int  = 5
+var treasure_spawn_count: Array[int]  = [5, 3]
 const TREASURE_ITEM_ID = 0
 
 func new_game():
-	_mining_tile_map.new_game(map_target_rect)
+	_mining_surface_tile_map.new_game(map_target_rect)
 	_treasure_tile_map.new_game(map_target_rect, treasure_spawn_count)
+	_mining_background_tile_map.new_game(map_target_rect)
 
 func end_game() -> InventoryData:
-	_mining_tile_map.end_game()
+	_mining_surface_tile_map.end_game()
 	
-	var treasure_count: int = 0
-	for treasure_pos in _treasure_tile_map.get_used_cells():
-		if not _mining_tile_map.get_cell_tile_data(treasure_pos):
-			treasure_count += 1
-	Logger.debug("Treasures mined: {0}".format([treasure_count]))
-	return InventoryData.new({TREASURE_ITEM_ID: treasure_count})
+	return _count_treasures()
 
 func _ready() -> void:
-	_mining_tile_map.map_ready.connect(_on_map_ready)
+	_mining_surface_tile_map.map_ready.connect(_on_map_ready)
 
+# Private funcs
+func _count_treasures() -> InventoryData:
+	var item_drops: InventoryData = InventoryData.new()
+	for spawned_treasure: TreasureTileMap.SpawnedTreasure in _treasure_tile_map.spawned_treasures:
+		if _is_treasure_uncovered(spawned_treasure):
+			item_drops.add_inventory(spawned_treasure.treasure.item_drops)
+	Logger.debug("Treasures mined: {0}".format([item_drops.item_count]))
+	return item_drops
+
+func _is_treasure_uncovered(treasure: TreasureTileMap.SpawnedTreasure):
+	for treasure_cell in _treasure_tile_map.tile_set.get_pattern(treasure.treasure.pattern_id).get_used_cells():
+		if _mining_surface_tile_map.get_cell_tile_data(treasure.rect.position + treasure_cell):
+			return false
+	return true
+
+# Signal handlers
 func _on_map_ready(target_rect: Rect2):
 	_camera.target = target_rect
 
-
-
-#func _draw():
-	#await get_tree().process_frame
-	#_camera.scale_camera()
 
 func _on_mine(amount: float) -> void:
 	mine.emit(amount)
 
 
 func _on_select_mining_shape(shape: Array[Vector2i]) -> void:
-	_mining_tile_map.set_mining_shape(shape)
+	_mining_surface_tile_map.set_mining_shape(shape)

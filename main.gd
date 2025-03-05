@@ -3,6 +3,7 @@ extends Node2D
 @export var mining_minigame: MiningMinigame
 @export var item_manager: ItemManager
 @export var inventory: PlayerInventory
+@export var mining_spot_manager: MiningSpotManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,3 +24,4 @@ func _on_mining_tile_activated() -> void:
 func _on_game_over(item_drops: InventoryData) -> void:
 	mining_minigame.hide()
 	inventory.add_items(item_drops)
+	mining_spot_manager.delete_active_mining_spot()
