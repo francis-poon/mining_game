@@ -1,4 +1,4 @@
-class_name MiningTileMap
+class_name MiningSurfaceTileMap
 extends TileMapLayer
 
 signal map_ready(global_target_rect: Rect2)
