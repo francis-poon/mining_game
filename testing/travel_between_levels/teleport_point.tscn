@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://baaikextvpiqt"]
+
+[ext_resource type="Script" uid="uid://2qgrrp35is1k" path="res://testing/travel_between_levels/teleport_point.gd" id="1_f557b"]
+[ext_resource type="Texture2D" uid="uid://dd5uv64vdxvri" path="res://assets/[Anokolisa] Pixel Crawler - Free Pack 2.0.3/Environment/Props/Static/Esoteric.png" id="2_wr6pq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhwx4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acotv"]
+atlas = ExtResource("2_wr6pq")
+region = Rect2(48, 112, 16, 16)
+
+[node name="TeleportPoint" type="Area2D"]
+script = ExtResource("1_f557b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yhwx4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_acotv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
