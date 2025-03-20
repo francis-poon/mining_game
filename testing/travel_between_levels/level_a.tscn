@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=4 uid="uid://dmtoaotuv8kp0"]
+
+[ext_resource type="Script" uid="uid://dhvk7ogpfl78d" path="res://testing/travel_between_levels/test_level.gd" id="1_6o5iw"]
+[ext_resource type="TileSet" uid="uid://dndttuepcmd10" path="res://resources/tile_sets/world_tile_set.tres" id="2_6o5iw"]
+[ext_resource type="PackedScene" uid="uid://baaikextvpiqt" path="res://testing/travel_between_levels/teleport_point.tscn" id="2_xuwra"]
+
+[node name="LevelA" type="Node2D" node_paths=PackedStringArray("default_teleport", "_teleport_points")]
+script = ExtResource("1_6o5iw")
+default_teleport = NodePath("TeleportPoints/TeleportPoint")
+_teleport_points = NodePath("TeleportPoints")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD8//3/AwACAAoAAAD8//7/AwACAAoAAAD8////AwACAAoAAAD8/wAAAwACAAoAAAD8/wEAAwACAAoAAAD8/wIAAwACAAoAAAD9//3/AwACAAoAAAD9//7/AwACAAoAAAD9////AwACAAoAAAD9/wAAAwACAAoAAAD9/wEAAwACAAoAAAD9/wIAAwACAAoAAAD+//3/AwACAAoAAAD+//7/AwACAAoAAAD+////AwACAAoAAAD+/wAAAwACAAoAAAD+/wEAAwACAAoAAAD+/wIAAwACAAoAAAD///3/AwACAAoAAAD///7/AwACAAoAAAD/////AwACAAoAAAD//wAAAwACAAoAAAD//wEAAwACAAoAAAD//wIAAwACAAoAAAAAAP3/AwACAAoAAAAAAP7/AwACAAoAAAAAAP//AwACAAoAAAAAAAAAAwACAAoAAAAAAAEAAwACAAoAAAAAAAIAAwACAAoAAAABAP3/AwACAAoAAAABAP7/AwACAAoAAAABAP//AwACAAoAAAABAAAAAwACAAoAAAABAAEAAwACAAoAAAABAAIAAwACAAoAAAACAP3/AwACAAoAAAACAP7/AwACAAoAAAACAP//AwACAAoAAAACAAAAAwACAAoAAAACAAEAAwACAAoAAAACAAIAAwACAAoAAAADAP3/AwACAAoAAAADAP7/AwACAAoAAAADAP//AwACAAoAAAADAAAAAwACAAoAAAADAAEAAwACAAoAAAADAAIAAwACAAoAAAA=")
+tile_set = ExtResource("2_6o5iw")
+
+[node name="TeleportPoints" type="Node" parent="."]
+
+[node name="TeleportPoint" parent="TeleportPoints" instance=ExtResource("2_xuwra")]
+position = Vector2(-52, 29)
+destination_level_name = "level_b"
+destination_teleport_name = "a"
+teleport_name = "a"
+
+[node name="TeleportPoint2" parent="TeleportPoints" instance=ExtResource("2_xuwra")]
+position = Vector2(46, -24)
+destination_level_name = "level_c"
+destination_teleport_name = "b"
+teleport_name = "b"

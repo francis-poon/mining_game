@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5oawdw4wnf2g"]
+
+[ext_resource type="Script" uid="uid://d3mu82fuwfb0c" path="res://testing/travel_between_levels/level_manager.gd" id="2_y3g1i"]
+[ext_resource type="PackedScene" uid="uid://dmtoaotuv8kp0" path="res://testing/travel_between_levels/level_a.tscn" id="3_ntjog"]
+[ext_resource type="PackedScene" uid="uid://cbrfyp5omrksd" path="res://testing/travel_between_levels/level_b.tscn" id="4_gdomo"]
+[ext_resource type="PackedScene" uid="uid://ddm24cjgqt6sc" path="res://testing/travel_between_levels/level_c.tscn" id="4_ntjog"]
+[ext_resource type="PackedScene" uid="uid://3e0wqvueic52" path="res://player/player.tscn" id="5_atf4m"]
+
+[node name="TravelBetweenLevels" type="Node2D"]
+
+[node name="LevelManager" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("2_y3g1i")
+level_a = ExtResource("3_ntjog")
+level_b = ExtResource("4_gdomo")
+level_c = ExtResource("4_ntjog")
+player = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("5_atf4m")]
+z_index = 1
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(10, 10)

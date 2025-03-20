@@ -3,10 +3,17 @@
 [ext_resource type="Script" uid="uid://bq04h7r3sgfjd" path="res://utils/items/item_manager.gd" id="1_r5cys"]
 [ext_resource type="Script" uid="uid://bowl0ldhv0y0j" path="res://utils/items/item_data.gd" id="2_sw2d5"]
 
-[node name="ItemManager" type="Node2D"]
+[node name="ItemManager" type="Node"]
 script = ExtResource("1_r5cys")
 
-[node name="ItemData" type="Node" parent="."]
+[node name="ScrapMetal" type="Node" parent="."]
 script = ExtResource("2_sw2d5")
-item_name = "Treasure"
-description = "Underground treasure! What could be inside?"
+item_name = "Scrap Metal"
+description = "Random bits and pieces of metal."
+
+[node name="CPU" type="Node" parent="."]
+script = ExtResource("2_sw2d5")
+id = 1
+item_name = "CPU"
+description = "An ancient tablet that can be enchanted."
+metadata/_custom_type_script = "uid://bowl0ldhv0y0j"

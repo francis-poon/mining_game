@@ -1,0 +1,9 @@
+== Artifact Codex ==
+Player collects artifact
+Artifact is unlocked
+Artifact shows up in museum
+
+Artifact has
+- sprite
+- name
+- flavor text

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnme5tv6cv8h8"]
+
+[ext_resource type="Script" uid="uid://dnli8p37vi15g" path="res://levels/teleport_points/teleport_point.gd" id="1_l4572"]
+[ext_resource type="Texture2D" uid="uid://ts8dlthpqfc4" path="res://assets/[Anokolisa] Pixel Crawler - Free Pack 2.0.3/Environment/Structures/Buildings/Shadows.png" id="2_l4572"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nyudb"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxetl"]
+atlas = ExtResource("2_l4572")
+region = Rect2(32, 0, 16, 16)
+
+[node name="TeleportPoint" type="Area2D"]
+script = ExtResource("1_l4572")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nyudb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_dxetl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

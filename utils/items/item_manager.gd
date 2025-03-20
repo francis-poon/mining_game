@@ -1,5 +1,5 @@
 class_name ItemManager
-extends Node2D
+extends Node
 
 var item_dictionary: Dictionary = {}
 
