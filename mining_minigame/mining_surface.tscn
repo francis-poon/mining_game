@@ -6,7 +6,7 @@
 [ext_resource type="TileSet" uid="uid://du2id2ifa053t" path="res://resources/tile_sets/treasure_tile_set.tres" id="2_8le4i"]
 [ext_resource type="Texture2D" uid="uid://d3igihd7r4d6p" path="res://assets/[Anokolisa] Pixel Crawler - Free Pack 2.0.3/Environment/Tilesets/Wall_Tiles.png" id="2_xclyh"]
 [ext_resource type="Texture2D" uid="uid://muyl2pahn5b7" path="res://assets/[Anokolisa] Pixel Crawler - Free Pack 2.0.3/Environment/Tilesets/Cave_Tiles - WIP.png" id="3_3teyd"]
-[ext_resource type="Script" uid="uid://c3erog0324bhd" path="res://mining_minigame/mining_background.gd" id="4_1gsxp"]
+[ext_resource type="Script" path="res://mining_minigame/mining_background.gd" id="4_1gsxp"]
 [ext_resource type="Resource" uid="uid://b73wtuhvfar42" path="res://resources/treasure/treasure_collection.tres" id="4_6wunb"]
 [ext_resource type="Script" uid="uid://2fthrq3wdxlh" path="res://mining_minigame/mining_surface_tile_map.gd" id="5_ojwpm"]
 [ext_resource type="Texture2D" uid="uid://dnm5vvrl2bf4h" path="res://assets/mining_surface.png" id="5_wyqvg"]
