@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=16 format=3 uid="uid://dndttuepcmd10"]
+[gd_resource type="TileSet" load_steps=18 format=3 uid="uid://dndttuepcmd10"]
 
 [ext_resource type="Texture2D" uid="uid://muyl2pahn5b7" path="res://assets/[Anokolisa] Pixel Crawler - Free Pack 2.0.3/Environment/Tilesets/Cave_Tiles - WIP.png" id="1_4fwnw"]
 [ext_resource type="Texture2D" uid="uid://c26itrbjgf2tl" path="res://assets/[Anokolisa] Pixel Crawler - Free Pack 2.0.3/Environment/Structures/Buildings/Roofs.png" id="2_y6v51"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d3igihd7r4d6p" path="res://assets/[Anokolisa] Pixel Crawler - Free Pack 2.0.3/Environment/Tilesets/Wall_Tiles.png" id="5_y6v51"]
 [ext_resource type="Texture2D" uid="uid://erg0oejgqj2p" path="res://assets/[Anokolisa] Pixel Crawler - Free Pack 2.0.3/Environment/Tilesets/Water_tiles.png" id="6_sl3yj"]
 [ext_resource type="Texture2D" uid="uid://77xpb5ddffwn" path="res://assets/[Anokolisa] Pixel Crawler - Free Pack 2.0.3/Environment/Structures/Buildings/Props.png" id="7_d6pml"]
+[ext_resource type="Texture2D" uid="uid://ts8dlthpqfc4" path="res://assets/[Anokolisa] Pixel Crawler - Free Pack 2.0.3/Environment/Structures/Buildings/Shadows.png" id="8_sl3yj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gsa4i"]
 
@@ -2566,6 +2567,40 @@ texture = ExtResource("7_d6pml")
 2:15/0 = 0
 3:15/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f4uvn"]
+texture = ExtResource("8_sl3yj")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_gsa4i")
@@ -2585,3 +2620,4 @@ sources/0 = SubResource("TileSetAtlasSource_fr0dk")
 sources/1 = SubResource("TileSetAtlasSource_h0vpb")
 sources/2 = SubResource("TileSetAtlasSource_yg1r3")
 sources/6 = SubResource("TileSetAtlasSource_tqihn")
+sources/7 = SubResource("TileSetAtlasSource_f4uvn")
