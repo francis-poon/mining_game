@@ -25,5 +25,7 @@ func _on_teleport(map: String, spawn_point: String):
 		current_level_name = map
 		current_level = levels[current_level_name].instantiate()
 		current_level.teleport.connect(_on_teleport)
-		add_child(current_level)
+		#current_level.pause_teleport(spawn_point)
+		call_deferred("add_child", current_level)
+	#current_level.pause_teleport(spawn_point)
 	player.position = current_level.get_teleport_point_pos(spawn_point)

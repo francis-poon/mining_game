@@ -20,3 +20,9 @@ position = Vector2(-42, 0)
 destination_level_name = "level_b"
 destination_teleport_name = "a"
 teleport_name = "a"
+
+[node name="TeleportPoint2" parent="TeleportPoints" instance=ExtResource("2_xuwra")]
+position = Vector2(47, 0)
+destination_level_name = "level_a"
+destination_teleport_name = "b"
+teleport_name = "a"
