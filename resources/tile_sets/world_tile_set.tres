@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=27 format=3 uid="uid://dndttuepcmd10"]
+[gd_resource type="TileSet" load_steps=29 format=3 uid="uid://dndttuepcmd10"]
 
 [ext_resource type="Texture2D" uid="uid://muyl2pahn5b7" path="res://assets/[Anokolisa] Pixel Crawler - Free Pack 2.0.3/Environment/Tilesets/Cave_Tiles - WIP.png" id="1_4fwnw"]
 [ext_resource type="Texture2D" uid="uid://c26itrbjgf2tl" path="res://assets/[Anokolisa] Pixel Crawler - Free Pack 2.0.3/Environment/Structures/Buildings/Roofs.png" id="2_y6v51"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bebd7rxdwwwm4" path="res://assets/Custom Assets/tilesets/grass.png" id="4_h0vpb"]
 [ext_resource type="Texture2D" uid="uid://bbpjfgv344oq5" path="res://assets/[Anokolisa] Pixel Crawler - Free Pack 2.0.3/Environment/Tilesets/Floors_Tiles.png" id="4_p2v63"]
 [ext_resource type="Texture2D" uid="uid://d3igihd7r4d6p" path="res://assets/[Anokolisa] Pixel Crawler - Free Pack 2.0.3/Environment/Tilesets/Wall_Tiles.png" id="5_y6v51"]
+[ext_resource type="Texture2D" uid="uid://dmftbo4cfhdcd" path="res://assets/Custom Assets/tilesets/path.png" id="5_yg1r3"]
 [ext_resource type="Texture2D" uid="uid://erg0oejgqj2p" path="res://assets/[Anokolisa] Pixel Crawler - Free Pack 2.0.3/Environment/Tilesets/Water_tiles.png" id="6_sl3yj"]
 [ext_resource type="Texture2D" uid="uid://77xpb5ddffwn" path="res://assets/[Anokolisa] Pixel Crawler - Free Pack 2.0.3/Environment/Structures/Buildings/Props.png" id="7_d6pml"]
 [ext_resource type="Texture2D" uid="uid://ts8dlthpqfc4" path="res://assets/[Anokolisa] Pixel Crawler - Free Pack 2.0.3/Environment/Structures/Buildings/Shadows.png" id="8_sl3yj"]
@@ -906,6 +907,35 @@ texture = ExtResource("4_h0vpb")
 11:3/0/terrains_peering_bit/left_side = 0
 11:3/0/terrains_peering_bit/top_left_corner = 0
 11:3/0/terrains_peering_bit/top_side = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p4fwk"]
+texture = ExtResource("5_yg1r3")
+5:1/0 = 0
+6:1/0 = 0
+6:2/0 = 0
+5:2/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+6:6/0 = 0
+5:6/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+9:6/0 = 0
+11:7/0 = 0
+11:6/0 = 0
+11:4/0 = 0
+10:4/0 = 0
+8:5/0 = 0
+8:4/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+11:3/0 = 0
+11:2/0 = 0
+11:0/0 = 0
+10:0/0 = 0
+8:0/0 = 0
+8:1/0 = 0
+9:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yg1r3"]
 texture = ExtResource("3_sl3yj")
@@ -3194,4 +3224,5 @@ sources/8 = SubResource("TileSetAtlasSource_xbatb")
 sources/9 = SubResource("TileSetAtlasSource_6082x")
 sources/10 = SubResource("TileSetAtlasSource_l5jdx")
 sources/11 = SubResource("TileSetAtlasSource_4hipy")
+sources/13 = SubResource("TileSetAtlasSource_p4fwk")
 pattern_0 = SubResource("TileMapPattern_kei1r")
