@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://8p4txjawrdjl"]
+
+[ext_resource type="Texture2D" uid="uid://dgrq1f40cgo2r" path="res://assets/[Sr.Toasty] UI assets pack 2/UI books & more.png" id="1_4qntr"]
+[ext_resource type="Texture2D" uid="uid://da8fp3u3710xw" path="res://assets/[Sr.Toasty] UI assets pack 2/UI cooking.png" id="2_js8yr"]
+[ext_resource type="Texture2D" uid="uid://cyeud1u4e3bug" path="res://assets/[ToffeeCraft] MediavelFree.png/MediavelFree.png" id="3_0u5pd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udq8s"]
+atlas = ExtResource("2_js8yr")
+
+[node name="GuiTest0" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_4qntr")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_udq8s")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_udq8s")
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_4qntr")
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_0u5pd")
