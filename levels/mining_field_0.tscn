@@ -210,11 +210,12 @@ texture = ExtResource("4_iobur")
 [sub_resource type="TileSet" id="TileSet_x1n4a"]
 sources/1 = SubResource("TileSetAtlasSource_efxa6")
 
-[node name="MiningField0" type="Node2D" node_paths=PackedStringArray("mining_minigame", "mining_spot_manager", "default_teleport", "_teleport_points")]
+[node name="MiningField0" type="Node2D" node_paths=PackedStringArray("mining_minigame", "mining_spot_manager", "default_teleport", "_default_spawn_point", "_teleport_points")]
 script = ExtResource("1_iobur")
 mining_minigame = NodePath("CanvasLayer/MiningMinigame")
 mining_spot_manager = NodePath("MiningSpotManager")
 default_teleport = NodePath("TeleportPoints/TeleportPoint")
+_default_spawn_point = NodePath("TeleportPoints/TeleportPoint")
 _teleport_points = NodePath("TeleportPoints")
 
 [node name="GroundTileMapLayer" type="TileMapLayer" parent="."]
@@ -226,7 +227,6 @@ tile_map_data = PackedByteArray("AAAIAPb/CgABAAQAAAAIAPX/CgACAAAAAAAHAPb/CgADAAU
 tile_set = ExtResource("1_c6fgw")
 
 [node name="MiningSpotManager" type="Node2D" parent="." node_paths=PackedStringArray("_spawn_point_map")]
-visible = false
 script = ExtResource("2_xddxw")
 _spawn_point_map = NodePath("SpawnPointsTileMapLayer")
 mining_tile_scene = ExtResource("3_j0li1")

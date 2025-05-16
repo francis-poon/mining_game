@@ -16,10 +16,11 @@ region = Rect2(608, 80, 48, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fh3f3"]
 size = Vector2(24, 24)
 
-[node name="PodiumSpot" type="Node2D" node_paths=PackedStringArray("_sprite", "_label")]
+[node name="PodiumSpot" type="Node2D" node_paths=PackedStringArray("_sprite", "_description_label", "_description_control")]
 script = ExtResource("1_qtor6")
 _sprite = NodePath("Sprite2D")
-_label = NodePath("CanvasLayer/ScreenMarginContainer/MarginContainer/LabelMarginContainer/Label")
+_description_label = NodePath("CanvasLayer/ScreenMarginContainer/DescriptionMarginContainer/LabelMarginContainer/Label")
+_description_control = NodePath("CanvasLayer/ScreenMarginContainer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_5yop6")
@@ -34,19 +35,19 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_bottom = 60
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ScreenMarginContainer"]
+[node name="DescriptionMarginContainer" type="MarginContainer" parent="CanvasLayer/ScreenMarginContainer"]
 custom_minimum_size = Vector2(100, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="TileScaleContainer" type="Container" parent="CanvasLayer/ScreenMarginContainer/MarginContainer"]
+[node name="TileScaleContainer" type="Container" parent="CanvasLayer/ScreenMarginContainer/DescriptionMarginContainer"]
 layout_mode = 2
 script = ExtResource("3_yoici")
 tile_scale = 2.5
 metadata/_custom_type_script = "uid://bq5s5y8dhln2f"
 
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/ScreenMarginContainer/MarginContainer/TileScaleContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/ScreenMarginContainer/DescriptionMarginContainer/TileScaleContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -56,13 +57,14 @@ patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
-[node name="LabelMarginContainer" type="MarginContainer" parent="CanvasLayer/ScreenMarginContainer/MarginContainer"]
+[node name="LabelMarginContainer" type="MarginContainer" parent="CanvasLayer/ScreenMarginContainer/DescriptionMarginContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 60
 theme_override_constants/margin_right = 60
 
-[node name="Label" type="Label" parent="CanvasLayer/ScreenMarginContainer/MarginContainer/LabelMarginContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/ScreenMarginContainer/DescriptionMarginContainer/LabelMarginContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.647059, 0.470588, 0.333333, 1)
 text = "Placeholder Text"
 horizontal_alignment = 1
 vertical_alignment = 1
