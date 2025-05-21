@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dgujtar0wab4b" path="res://levels/main_town/podium_spot.gd" id="1_qtor6"]
 [ext_resource type="Texture2D" uid="uid://ts8dlthpqfc4" path="res://assets/[Anokolisa] Pixel Crawler - Free Pack 2.0.3/Environment/Structures/Buildings/Shadows.png" id="2_fh3f3"]
 [ext_resource type="Script" uid="uid://bq5s5y8dhln2f" path="res://godot_libs/controls/tile_scale_container.gd" id="3_yoici"]
-[ext_resource type="Texture2D" uid="uid://dgrq1f40cgo2r" path="res://assets/[Sr.Toasty] UI assets pack 2/UI books & more.png" id="4_qufv0"]
+[ext_resource type="Texture2D" uid="uid://dgrq1f40cgo2r" path="res://assets/GUI/[Sr.Toasty] UI assets pack 2/UI books & more.png" id="4_qufv0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5yop6"]
 atlas = ExtResource("2_fh3f3")

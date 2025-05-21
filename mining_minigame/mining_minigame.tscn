@@ -1,11 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvbpmsdmb7q7o"]
+[gd_scene load_steps=13 format=3 uid="uid://cvbpmsdmb7q7o"]
 
 [ext_resource type="Script" uid="uid://bc5iqsta0lcci" path="res://mining_minigame/mining_minigame.gd" id="1_hd278"]
 [ext_resource type="Script" uid="uid://bxa85jt7vhb3c" path="res://mining_minigame/mining_durability.gd" id="1_ndmj1"]
 [ext_resource type="PackedScene" uid="uid://2dgp28b8iovt" path="res://mining_minigame/mining_surface.tscn" id="2_4ka27"]
+[ext_resource type="Texture2D" uid="uid://djvkncp8nhyt8" path="res://assets/GUI/[Androx] CrimsonFantasyGU_fixed/CrimsonFantasyGUI/GUISprite.png" id="2_vy1ru"]
+[ext_resource type="Script" uid="uid://bq5s5y8dhln2f" path="res://godot_libs/controls/tile_scale_container.gd" id="2_yl06b"]
 [ext_resource type="Script" uid="uid://2jhrx0orn4lw" path="res://mining_minigame/mining_shape_button.gd" id="3_oo6ew"]
 [ext_resource type="Script" uid="uid://cqso56mybxjxi" path="res://mining_minigame/mining_tool_selector.gd" id="4_4td7i"]
 [ext_resource type="ButtonGroup" uid="uid://bn1wilk07yl5k" path="res://resources/tool_button_group.tres" id="5_8187t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yl06b"]
+atlas = ExtResource("2_vy1ru")
+region = Rect2(16, 51, 64, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3hj1"]
+atlas = ExtResource("2_vy1ru")
+region = Rect2(16, 36, 64, 9)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okmnj"]
 bg_color = Color(0.737542, 0.550335, 0.4877, 1)
@@ -37,8 +47,33 @@ theme_override_constants/separation = 0
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="TileScaleContainer" type="Container" parent="VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_yl06b")
+tile_scale = 8.0
+metadata/_custom_type_script = "uid://bq5s5y8dhln2f"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="VBoxContainer/ColorRect/TileScaleContainer"]
+layout_mode = 2
+value = 80.0
+fill_mode = 1
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_over = SubResource("AtlasTexture_yl06b")
+texture_progress = SubResource("AtlasTexture_o3hj1")
 
 [node name="MiningDurability" type="ProgressBar" parent="VBoxContainer/ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
