@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://8p4txjawrdjl"]
 
-[ext_resource type="Texture2D" uid="uid://dgrq1f40cgo2r" path="res://assets/[Sr.Toasty] UI assets pack 2/UI books & more.png" id="1_4qntr"]
-[ext_resource type="Texture2D" uid="uid://da8fp3u3710xw" path="res://assets/[Sr.Toasty] UI assets pack 2/UI cooking.png" id="2_js8yr"]
-[ext_resource type="Texture2D" uid="uid://cyeud1u4e3bug" path="res://assets/[ToffeeCraft] MediavelFree.png/MediavelFree.png" id="3_0u5pd"]
+[ext_resource type="Texture2D" path="res://assets/[Sr.Toasty] UI assets pack 2/UI books & more.png" id="1_4qntr"]
+[ext_resource type="Texture2D" path="res://assets/[Sr.Toasty] UI assets pack 2/UI cooking.png" id="2_js8yr"]
+[ext_resource type="Texture2D" path="res://assets/[ToffeeCraft] MediavelFree.png/MediavelFree.png" id="3_0u5pd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_udq8s"]
 atlas = ExtResource("2_js8yr")
